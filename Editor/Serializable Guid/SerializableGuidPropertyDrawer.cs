@@ -48,8 +48,8 @@ namespace BatteryAcid.Serializables.Editor
             }
 
             IsLocked = GUI.Toggle(padLockRect, IsLocked, GUIContent.none, Styles.PadLock);
-
-            using (EditorGUI.DisabledGroupScope disabled = new EditorGUI.DisabledGroupScope(true))
+            
+            using (EditorGUI.DisabledGroupScope disabled = new EditorGUI.DisabledGroupScope(IsLocked))
             {
                 EditorGUI.PropertyField(fieldRect, property.FindPropertyRelative("guidString"), GUIContent.none);
             }
