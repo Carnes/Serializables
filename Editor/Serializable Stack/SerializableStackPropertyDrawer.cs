@@ -39,9 +39,9 @@ namespace BatteryAcid.Serializables.Editor
                 Reorderable.onAddCallback = (ReorderableList list) => list.serializedProperty.arraySize++;
                 Reorderable.elementHeightCallback = (int index) =>
                 {
-                    SerializedProperty property = Values.GetArrayElementAtIndex(index).FindPropertyRelative("Value");
-                    float expandedOffset = property.isExpanded ? 5f : 0f;
-                    return EditorGUI.GetPropertyHeight(property, true) + expandedOffset;
+                    SerializedProperty propertyValue = Values.GetArrayElementAtIndex(index).FindPropertyRelative("Value");
+                    float expandedOffset = propertyValue.isExpanded ? 5f : 0f;
+                    return EditorGUI.GetPropertyHeight(propertyValue, true) + expandedOffset;
                 };
             }
             Reorderable.serializedProperty = Values;
